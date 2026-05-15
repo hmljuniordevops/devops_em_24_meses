@@ -1,0 +1,42 @@
+# 🧠 /proc e /sys – Sistemas de arquivos virtuais no Linux
+
+## 📁 /proc – Sistema de processos e kernel
+
+O `/proc` é um sistema de arquivos virtual que fornece informações **dinâmicas sobre processos e o kernel** em tempo real.
+
+Ele não armazena arquivos no disco, pois tudo é gerado diretamente pelo kernel.
+
+---
+
+## 📌 Exemplos de uso:
+
+```bash
+cat /proc/cpuinfo -> informações do processador
+cat /proc/meminfo -> informaçẽs da memória
+cat /proc/modules ->Exibe os módulos (drivers) carregados no kernel.
+
+O /sys é um sistema de arquivos virtual criado pelo kernel Linux para expor informações estruturadas sobre hardware e dispositivos.
+Ele segue o modelo de objetos do kernel (kobjects), organizando melhor o acesso ao hardware.
+
+Características do /sys:
+Criado a partir do kernel Linux 2.6
+Baseado no modelo de objetos do kernel (kobjects)
+Complementa o /proc com foco em hardware
+Organiza informações de:
+dispositivos
+drivers
+barramentos (buses)
+classes de hardware
+energia (power management)
+
+Monitoramento de hardware (temperatura e sensores)
+cat /sys/class/thermal/thermal_zone0/temp
+
+Monitoramente de rede. 
+ls /sys/class/net/
+
+Resumo simples
+/proc → processos e estado do kernel
+/sys → hardware vivo e configurável
+
+
